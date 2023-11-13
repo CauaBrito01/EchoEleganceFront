@@ -15,6 +15,8 @@ export class AdmProductCardComponent {
   @Input() marca: string = '';
   @Input() nota: string = '';
   @Input() origem: string = '';
+  @Input() imgProduto: string = '';
+  @Input() qtdProduto: string = '';
 
   constructor(private router: Router) {}
 
