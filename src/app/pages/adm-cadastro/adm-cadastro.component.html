@@ -1,0 +1,27 @@
+<body>
+    <main>
+        <div class="containerForm">
+
+            <h2>Echo elegance</h2>
+            
+            <p>Crie sua conta de adm</p>
+
+            <form>
+
+                <app-custom-input label="Nome:" placeholder="Digite seu nome"></app-custom-input>
+                <app-custom-input label="Email:" placeholder="Digite seu email"></app-custom-input>
+                <app-custom-input label="Endereço:" placeholder="Digite seu endereço"></app-custom-input>
+                <app-custom-input label="Cnpj:" placeholder="Digite seu Cnpj"></app-custom-input>
+                <app-custom-input label="Senha:" placeholder="Digite sua senha" type="password"></app-custom-input>
+                <app-custom-input label="Confirmar Senha:" placeholder="Confirme sua senha" type="password"></app-custom-input>
+
+                <div class="containerButton">
+                    <app-custom-button [buttonText]="'Criar'"></app-custom-button> 
+                    <app-custom-button  (click)="redirecionarLogin()" [buttonText]="'Login'"></app-custom-button> 
+                </div>
+                
+            </form>
+        
+        </div>
+    </main>
+</body>

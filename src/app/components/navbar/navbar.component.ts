@@ -13,4 +13,8 @@ export class NavbarComponent {
   redirecionarHome() {
     this.router.navigate(['/home']);
   }
+
+  redirecionarUser() {
+    this.router.navigate(['/user']);
+  }
 } 

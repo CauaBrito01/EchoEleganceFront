@@ -2,7 +2,7 @@ button {
     --color: black;
     font-family: inherit;
     display: inline-block;
-    width: 5em;
+    width: auto;
     height: 1.6em;
     line-height: 2.5em;
     margin: 20px;
@@ -20,7 +20,8 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-   }
+    padding: 0 10px;
+}
    
    button:before {
     content: "";

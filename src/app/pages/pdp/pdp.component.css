@@ -30,10 +30,15 @@ main{
     width: 60%;
 }
 
+.container .right .containerTexts .titleOfProduct{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 .container .right .containerTexts .titleOfProduct p{
     font-size: 28px;
     font-weight: bold;
-    margin: 20px 0;
 }
 
 
@@ -60,4 +65,13 @@ main{
     align-items: center;
     width: 100%;
     gap: 20px;
+}
+
+.quantity button{
+    background: none;
+    border: none;
+}
+
+.quantity button:hover{
+    cursor: pointer;
 }

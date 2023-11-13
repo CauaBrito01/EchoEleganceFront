@@ -1,3 +1,5 @@
+// pdp.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,6 +12,8 @@ export class PdpComponent implements OnInit {
   title: string = '';
   description: string = '';
   price: string = '';
+  quantidade: number = 1;
+  userRating: number = 0;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -22,5 +26,19 @@ export class PdpComponent implements OnInit {
       this.description = productData['description'];
       this.price = productData['price'];
     }
+  }
+
+  aumentarQuantidade() {
+    this.quantidade++;
+  }
+
+  diminuirQuantidade() {
+    if (this.quantidade > 1) {
+      this.quantidade--;
+    }
+  }
+
+  onRatingChange(rating: number): void {
+    this.userRating = rating;
   }
 }

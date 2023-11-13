@@ -1,0 +1,44 @@
+<body>
+    <main>
+
+        <section class="containerLeft">
+            
+            <div class="containerText">
+                <h2 class="title">Faça seu login</h2>
+                <h3 class="subTitle">Gerencie seus produtos</h3>
+            </div>
+
+            <div class="containerGif">
+                <img src="../../../assets/images/admPost.gif" />
+            </div>
+    
+        </section>
+    
+        <section class="containerRight">
+
+            <div class="containerCard">
+
+                <h2>Echo elegance</h2>
+                
+                <p>Faça seu login!</p>
+
+                <form>
+
+                    <app-custom-input label="Email:" placeholder="Digite seu email"></app-custom-input>
+                    <app-custom-input label="Senha:" placeholder="Digite sua senha" type="password"></app-custom-input>
+
+                    <div class="containerButton">
+                        <app-custom-button  (click)="redirecionarParaHome()"  [buttonText]="'Login'"></app-custom-button> 
+                        <app-custom-button  (click)="redirecionarParaCadastro()"  [buttonText]="'Cadastrar'"></app-custom-button> 
+                    </div>
+                   
+
+                </form>
+
+            </div>
+            
+        </section>
+
+    </main>
+
+</body>

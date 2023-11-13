@@ -32,14 +32,14 @@
 
         </section>
 
+        
         <section class="filterCards">
-            
-            <app-filter-card text="Calçados"/>
-            <app-filter-card text="Calçados"/>
-            <app-filter-card text="Calçados"/>
-            <app-filter-card text="Calçados"/>
-
+            <app-filter-card text="Calçados" (click)="redirecionarParaFilterProducts('Calçados')"/>
+            <app-filter-card text="Camisetas" (click)="redirecionarParaFilterProducts('Camisetas')" urlImage="../../../assets/images/camiseta.png"/>
+            <app-filter-card text="Blusas" (click)="redirecionarParaFilterProducts('Blusas')" urlImage="../../../assets/images/blusas.png"/>
+            <app-filter-card text="Acessorios" (click)="redirecionarParaFilterProducts('Acessorios')" urlImage="../../../assets/images/acessorios.png"/>
         </section>
+        
 
         
         <section class="productsCards">

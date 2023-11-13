@@ -51,3 +51,8 @@ ul li a:hover{
     width: 24px;
     height: 24px;
 }
+
+.userActions img:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}

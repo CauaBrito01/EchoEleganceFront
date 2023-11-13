@@ -1,0 +1,42 @@
+.card-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    border: 1px solid gray;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.24);
+    max-width: 800px;
+    border-radius: 5px;
+    padding: 1%;
+  }
+  
+  .text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .icon-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .edit-icon {
+    /* Add your edit icon styles here */
+    color: yellow;
+  }
+  
+  .delete-icon {
+    /* Add your delete icon styles here */
+    color: red;
+  }
+  
+
+  .icon-container img{
+    height: 24px;
+  }
+
+  .icon-container img:hover{
+    cursor: pointer;
+  }

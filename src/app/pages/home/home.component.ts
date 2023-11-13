@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
   constructor(private router: Router) {}
@@ -19,5 +19,7 @@ export class HomeComponent {
     this.router.navigate(['/pdp'], { state: { data: productData } });
   }
   
-
+  redirecionarParaFilterProducts(categoria: string) {
+    this.router.navigate(['/filter-products'], { state: { categoria } });
+  }
 }

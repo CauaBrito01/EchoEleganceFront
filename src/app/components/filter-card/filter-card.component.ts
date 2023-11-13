@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class FilterCardComponent {
   @Input() text: string = '';
+  @Input() urlImage: string = '../../../assets/images/boots.png';
 }

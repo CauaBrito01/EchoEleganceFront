@@ -14,7 +14,14 @@ import { DivisorComponent } from './components/divisor/divisor.component';
 import { FilterCardComponent } from './components/filter-card/filter-card.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { PdpComponent } from './pages/pdp/pdp.component';
-
+import { UserComponent } from './pages/user/user.component';
+import { AdmLoginComponent } from './pages/adm-login/adm-login.component';
+import { AdmCadastroComponent } from './pages/adm-cadastro/adm-cadastro.component';
+import { HomeAdmComponent } from './pages/home-adm/home-adm.component';
+import { AdmProductCardComponent } from './components/adm-product-card/adm-product-card.component';
+import { EditProductComponent } from './pages/edit-product/edit-product.component';
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
+import { FilterProductsComponent } from './pages/filter-products/filter-products.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +34,15 @@ import { PdpComponent } from './pages/pdp/pdp.component';
     DivisorComponent,
     FilterCardComponent,
     ProductCardComponent,
-    PdpComponent
+    PdpComponent,
+    UserComponent,
+    AdmLoginComponent,
+    AdmCadastroComponent,
+    HomeAdmComponent,
+    AdmProductCardComponent,
+    EditProductComponent,
+    StarRatingComponent,
+    FilterProductsComponent
   ],
   imports: [
     BrowserModule,
