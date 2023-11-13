@@ -7,11 +7,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:8090/usuario';
+  private createUser = 'http://localhost:8090/usuario';
+  private createProduto = 'http://localhost:8090/produtos';
+
 
   constructor(private http: HttpClient) { }
 
   criarUsuario(usuario: any): Observable<any> {
-    return this.http.post(this.apiUrl, usuario);
+    return this.http.post(this.createUser, usuario);
+  }
+
+  criarProduto(product: any): Observable<any> {
+    return this.http.post(this.createProduto, product);
   }
 }

@@ -1,17 +1,19 @@
+// cadastro.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 
+
 @Component({
-  selector: 'app-adm-cadastro',
-  templateUrl: './adm-cadastro.component.html',
-  styleUrls: ['./adm-cadastro.component.css']
+  selector: 'app-create-product',
+  templateUrl: './create-product.component.html',
+  styleUrl: './create-product.component.css'
 })
-export class AdmCadastroComponent {
-   Produto = {
+export class CreateProductComponent {
+  Produto = {
     preco: '',
     tituloProduto: '',
-    descProduto: '',
+    dscProduto: '',
     marca: '',
     indAtivo: '',
     IdAnunciante: '',
@@ -26,9 +28,9 @@ export class AdmCadastroComponent {
     this.router.navigate(['/adm-login']);
   }
 
-  criarUsuario(): void {
+  criarProduto(): void {
 
-    this.userService.criarUsuario(this.Produto).subscribe(
+    this.userService.criarProduto(this.Produto).subscribe(
       response => {
         console.log('Resposta da API:', response);
         // Adicione aqui a lógica para redirecionar para a página desejada ou qualquer outra ação necessária.

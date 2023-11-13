@@ -10,6 +10,7 @@ import { AdmCadastroComponent } from './pages/adm-cadastro/adm-cadastro.componen
 import { HomeAdmComponent } from './pages/home-adm/home-adm.component';
 import { EditProductComponent } from './pages/edit-product/edit-product.component';
 import { FilterProductsComponent } from './pages/filter-products/filter-products.component';
+import { CreateProductComponent } from './pages/create-product/create-product.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirecionar para 'home' por padrão
@@ -41,7 +42,8 @@ const routes: Routes = [
   },
   { path: 'adm-home', component: HomeAdmComponent },
   { path: 'edit-product', component: EditProductComponent },
-  { path: 'filter-products', component: FilterProductsComponent }
+  { path: 'filter-products', component: FilterProductsComponent },
+  { path: 'create-product', component: CreateProductComponent }
 
 
 ];

@@ -7,4 +7,11 @@ import { Router } from '@angular/router';
   styleUrl: './home-adm.component.css'
 })
 export class HomeAdmComponent {
+
+  constructor(private router: Router) {}
+
+  redirecionarCriarProduto() {
+    this.router.navigate(['/create-product']);
+  }
+
 }

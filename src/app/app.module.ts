@@ -22,6 +22,7 @@ import { AdmProductCardComponent } from './components/adm-product-card/adm-produ
 import { EditProductComponent } from './pages/edit-product/edit-product.component';
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
 import { FilterProductsComponent } from './pages/filter-products/filter-products.component';
+import { CreateProductComponent } from './pages/create-product/create-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { FilterProductsComponent } from './pages/filter-products/filter-products
     AdmProductCardComponent,
     EditProductComponent,
     StarRatingComponent,
-    FilterProductsComponent
+    FilterProductsComponent,
+    CreateProductComponent
   ],
   imports: [
     BrowserModule,
