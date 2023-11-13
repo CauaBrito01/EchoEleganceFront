@@ -1,0 +1,53 @@
+nav{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    height: 80px;
+    position: relative;
+    background-color: ''; 
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.containerLogo, ul, .userActions{
+    width: 33%;
+}
+
+.containerLogo img:hover{
+    cursor: pointer;
+}
+
+ul{
+    display: flex;
+    justify-content: start;
+    list-style: none;
+    gap: 20px;
+}
+
+ul li a:hover{
+    cursor: pointer;
+    color: gray;
+}
+
+.containerLogo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerLogo img{
+    height: 80%;
+}
+
+.userActions{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+
+.userActions img{
+    width: 24px;
+    height: 24px;
+}

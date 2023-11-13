@@ -1,0 +1,87 @@
+<body>
+    <app-navbar></app-navbar>
+
+    <main>
+        
+        <section class="containerBanner">
+            <img src="../../../assets/images/banner.png" />
+        </section>
+
+        <section class="filtros">
+
+            <h2 class="title">FEITO EM BUSACA DO SEU MAIOR CONFORTO</h2>
+            <p class="subtitle">PARA TE ACOMPANHAR EM TODOS OS LUGARES</p>
+
+            <div class="options">
+                <a>Calçados</a>
+                <a>Camisas</a>
+                <a>Calças</a>
+                <a>Jaquetas</a>
+                <a>Acessorios</a>
+            </div>
+
+        </section>
+
+        <section class="discover">
+            
+            <div class="containerText">
+                <app-divisor />
+                <p>Conheça nossos produtos!</p>
+                <app-divisor />
+            </div>
+
+        </section>
+
+        <section class="filterCards">
+            
+            <app-filter-card text="Calçados"/>
+            <app-filter-card text="Calçados"/>
+            <app-filter-card text="Calçados"/>
+            <app-filter-card text="Calçados"/>
+
+        </section>
+
+        
+        <section class="productsCards">
+            
+            <app-product-card 
+                title="Camiseta Oakley Mark II SS Masculina" 
+                price="R$ 199,90" 
+                (click)="redirecionarParaPdp()" 
+            />
+
+            <app-product-card 
+                title="Camiseta Oakley Mark II SS Masculina" 
+                price="R$ 199,90" 
+                (click)="redirecionarParaPdp()" 
+            />
+
+            <app-product-card 
+                title="Camiseta Oakley Mark II SS Masculina" 
+                price="R$ 199,90" 
+                (click)="redirecionarParaPdp()" 
+            />
+
+            <app-product-card 
+                title="Camiseta Oakley Mark II SS Masculina" 
+                price="R$ 199,90" 
+                (click)="redirecionarParaPdp()" 
+            />
+
+            <app-product-card 
+                title="Camiseta Oakley Mark II SS Masculina" 
+                price="R$ 199,90" 
+                (click)="redirecionarParaPdp()" 
+            />
+
+            <app-product-card 
+                title="Camiseta Oakley Mark II SS Masculina" 
+                price="R$ 199,90" 
+                (click)="redirecionarParaPdp()" 
+            />
+
+        </section>
+
+    </main>
+
+</body>

@@ -1,0 +1,49 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    user-select: none;
+}
+
+.container:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.productCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height:250px;
+    width: 250px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.productCard img{
+    width: 80%;
+}
+
+.container .containerText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap:10px;
+    width: 80%;
+    margin-top:10px;
+}
+
+.container .containerText .title{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.container .containerText .price{
+    font-size: 16px;
+    color: gray;
+    font-weight: bold;
+}
