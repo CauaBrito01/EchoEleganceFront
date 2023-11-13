@@ -1,27 +1,25 @@
+<!-- home-adm.component.html -->
 <body>
     <main>
-        
-        <div class="title">
-            <h1>Lista de produtos</h1>
-        </div>
-
-        <!-- home-adm.component.html -->
-        <div class="container">
-            <app-adm-product-card *ngFor="let produto of produtos"
-            [price]="produto.preco"
-            [title]="produto.tituloProduto"
-            [description]="produto.dscProduto"
-            [marca]="produto.marca"
-            [nota]="produto.avgNota"
-            [origem]="produto.origem"
-            [imgProduto]="produto.imgProduto"
-            [qtdProduto]="produto.qtdProduto"
-            />
-        </div>
+      <div class="title">
+        <h1>Lista de produtos</h1>
+      </div>
   
-
-        <app-custom-button [buttonText]="'Adicionar novo'" (click)="redirecionarCriarProduto()" class="button"/>
-
-
+      <div class="container">
+        <app-adm-product-card *ngFor="let produto of produtos"
+          [data]="produto"
+          [price]="produto.preco"
+          [title]="produto.tituloProduto"
+          [description]="produto.dscProduto"
+          [marca]="produto.marca"
+          [nota]="produto.avgNota"
+          [origem]="produto.origem"
+          [imgProduto]="produto.imgProduto"
+          [qtdProduto]="produto.qtdProduto"
+        />
+      </div>
+  
+      <app-custom-button [buttonText]="'Adicionar novo'" (click)="redirecionarCriarProduto()" class="button"/>
     </main> 
-</body>
+  </body>
+  
