@@ -1,38 +1,59 @@
+// edit-product.component.ts
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-edit-product',
   templateUrl: './edit-product.component.html',
-  styleUrl: './edit-product.component.css'
+  styleUrls: ['./edit-product.component.css']
 })
-export class EditProductComponent {
-  title: string = '';
-  description: string = '';
-  marca: string = '';
-  nota: string = '';
-  origem: string = '';
-  price: string = '';
+export class EditProductComponent implements OnInit {
+  productId!: number;
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  Produto = {
+    preco: '',
+    tituloProduto: '',
+    dscProduto: '',
+    marca: '',
+    indAtivo: '',
+    qtdProduto: '',
+    avgNota: '',
+    imgProduto: '',
+  };
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private userService: UserService
+  ) {}
 
   ngOnInit() {
-    // Obter dados da rota
-    const productData = this.route.snapshot.data;
+    this.productId = +this.route.snapshot.paramMap.get('id')!;
 
-    if (productData) {
-      this.title = productData['title'];
-      this.description = productData['description'];
-      this.marca = productData['marca'];
-      this.nota = productData['nota'];
-      this.origem = productData['origem'];
-      this.price = productData['price'];
-    }
+    this.userService.obterProdutoPorId(this.productId).subscribe(
+      (product) => {
+        if (product) {
+          this.Produto = { ...product }; // Atualize todos os campos do produto
+        } else {
+          console.error('Produto não encontrado');
+        }
+      },
+      (error) => {
+        console.error('Erro ao obter detalhes do produto', error);
+      }
+    );
   }
 
-  
-  editar() {
-    this.router.navigate(['/adm-home']);
+  editarProduto() {
+    this.userService.editarProduto(this.productId, this.Produto).subscribe(
+      (response) => {
+        console.log('Produto editado com sucesso', response);
+        this.router.navigate(['/adm-home']);
+      },
+      (error) => {
+        console.error('Erro ao editar produto', error);
+      }
+    );
   }
 }

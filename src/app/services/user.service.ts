@@ -10,9 +10,9 @@ export class UserService {
   private createUser = 'http://localhost:8090/usuario';
   private createProduto = 'http://localhost:8090/produtos';
   private getProdutos = 'http://localhost:8090/produtos';
-  private deleteProduto = 'http://localhost:8090/produtos';  // Adicione a URL para excluir produtos
+  private deleteProduto = 'http://localhost:8090/produtos';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   criarUsuario(usuario: any): Observable<any> {
     return this.http.post(this.createUser, usuario);
@@ -26,10 +26,16 @@ export class UserService {
     return this.http.get(this.getProdutos);
   }
 
+  obterProdutoPorId(productId: number): Observable<any> {
+    return this.http.get(`${this.getProdutos}/${productId}`);
+  }
+
   excluirProduto(productId: number): Observable<any> {
-    // Adicione lógica para enviar uma solicitação de exclusão
-    // Pode ser necessário passar o ID ou outro identificador único do produto
-    // Exemplo: return this.http.delete(`${this.deleteProduto}/${productId}`);
     return this.http.delete(`${this.deleteProduto}/${productId}`);
+  }
+
+  editarProduto(productId: number, editedProductData: any): Observable<any> {
+    const editUrl = `${this.getProdutos}/${productId}`;
+    return this.http.put(editUrl, editedProductData);
   }
 }

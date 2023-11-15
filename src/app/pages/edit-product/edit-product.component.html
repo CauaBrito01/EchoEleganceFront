@@ -1,16 +1,22 @@
 <body>
-    <app-navbar />
-
     <main>
-        <div class="container">
-            <h1>Edite seu produto:</h1>
-            <app-custom-input label="Title"  placeholder="digite um novo title"/>
-            <app-custom-input label="Descrição"  placeholder="digite uma nova descrição"/>
-            <app-custom-input label="Marca"  placeholder="digite uma nova marca"/>
-            <app-custom-input label="Nota"   placeholder="digite uma nova nota"/>
-            <app-custom-input label="origem"   placeholder="digite uma nova origem"/>
-            <app-custom-input label="Preço"   placeholder="digite um novo Preço"/>
-            <app-custom-button [buttonText]="'Salvar'" (click)="editar()"/>
-        </div>
+      <div class="container">
+        <h1>Edite seu produto:</h1>
+        <form #form="ngForm">
+          <app-custom-input label="Preço Produto:" placeholder="Digite o preço do produto" [(ngModel)]="Produto.preco" name="preco" />
+          <app-custom-input label="Titulo Produto:" placeholder="Digite o titulo do produto" [(ngModel)]="Produto.tituloProduto" name="tituloProduto" />
+          <app-custom-input label="Descrição do Produto" placeholder="Digite a descrição do produto" [(ngModel)]="Produto.dscProduto" name="descProduto" />
+          <app-custom-input label="Marca do Produto" placeholder="Digite a marca do produto" [(ngModel)]="Produto.marca" name="marca" />
+          <app-custom-input label="indAtivo:" placeholder="Indique se o anuncio esta ativo" [(ngModel)]="Produto.indAtivo" name="indAtivo" />
+          <app-custom-input label="Quantidade de Produtos:" placeholder="Digite a quantidade do produto" [(ngModel)]="Produto.qtdProduto" name="qtdProduto" />
+          <app-custom-input label="AvgNota:" placeholder="Digite uma nota" [(ngModel)]="Produto.avgNota" name="AvgNota" />
+          <app-custom-input label="Imagem do Produto:" placeholder="Digite a url da imagem do produto" [(ngModel)]="Produto.imgProduto" name="imgProduto" />
+  
+          <!-- Restante do formulário -->
+  
+          <app-custom-button (click)="editarProduto()" [buttonText]="'Salvar'"></app-custom-button>
+        </form>
+      </div>
     </main>
-</body>
+  </body>
+  

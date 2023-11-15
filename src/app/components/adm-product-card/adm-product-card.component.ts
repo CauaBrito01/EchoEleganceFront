@@ -1,6 +1,7 @@
+// adm-product-card.component.ts
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../../services/user.service'; // Substitua pelo caminho real
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-adm-product-card',
@@ -21,11 +22,10 @@ export class AdmProductCardComponent {
   constructor(private router: Router, private userService: UserService) {}
 
   redirecionarEditPage() {
-    this.router.navigate(['/edit-product']);
+    this.router.navigate(['/edit-product', this.data.idProduto]);
   }
 
   excluirProduto() {
-    // Certifique-se de que data é definido e possui a propriedade idProduto
     if (this.data && this.data.idProduto) {
       const idProduto = this.data.idProduto;
 
@@ -33,7 +33,6 @@ export class AdmProductCardComponent {
         (response) => {
           if (response.status === 204) {
             console.log('Produto excluído com sucesso', response);
-            // Recarregar a página após a exclusão
             this.router.routeReuseStrategy.shouldReuseRoute = () => false;
             this.router.onSameUrlNavigation = 'reload';
             this.router.navigate([this.router.url]);
