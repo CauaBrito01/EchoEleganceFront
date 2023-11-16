@@ -1,5 +1,4 @@
-
-
+// custom-input.component.ts
 import { Component, Input, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -20,13 +19,15 @@ export class CustomInputComponent implements ControlValueAccessor {
   @Input() label: string = "";
   @Input() placeholder: string = "";
   @Input() type: string = "text";
-  value: any = ""; // Adicione esta linha
+  @Input() name: string | null = null;
+  value: any = "";
 
   onChange: any = () => {};
   onTouched: any = () => {};
 
   writeValue(value: any): void {
     this.value = value;
+    this.onChange(value);
   }
 
   registerOnChange(fn: any): void {
@@ -38,8 +39,13 @@ export class CustomInputComponent implements ControlValueAccessor {
   }
 
   onInputChange(event: any): void {
-    this.onChange(event.target.value);
+    this.value = event.target.value;
+    this.onChange(this.value);
     this.onTouched();
   }
-}
 
+  // Adicione este método para configurar ngModel como "standalone"
+  setDisabledState(isDisabled: boolean): void {
+    // No-op, necessário para implementar a interface ControlValueAccessor
+  }
+}

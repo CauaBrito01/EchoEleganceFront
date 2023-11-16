@@ -1,7 +1,8 @@
 // user.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, catchError, map, tap } from 'rxjs';
+import { LoginRequest } from '../models/login-request.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class UserService {
   private createProduto = 'http://localhost:8090/produtos';
   private getProdutos = 'http://localhost:8090/produtos';
   private deleteProduto = 'http://localhost:8090/produtos';
+  private loginUser = 'http://localhost:8090/usuario/login';
 
   constructor(private http: HttpClient) {}
 
@@ -38,4 +40,24 @@ export class UserService {
     const editUrl = `${this.getProdutos}/${productId}`;
     return this.http.put(editUrl, editedProductData);
   }
+
+  autenticarUsuario(loginData: LoginRequest): Observable<any> {
+    return this.http.post(this.loginUser, loginData, { observe: 'response' })
+        .pipe(
+            map(response => response.body), // Map para obter o corpo da resposta
+            catchError(error => {
+                // Se ocorrer um erro, tratamos a resposta como texto
+                if (error instanceof HttpErrorResponse) {
+                    return new Observable<string>((observer) => {
+                        observer.next(error.error.text || ''); // Retornar texto vazio em caso de erro
+                        observer.complete();
+                    });
+                }
+                throw error; // Se não for uma instância de HttpErrorResponse, rejeitar o erro normalmente
+            })
+        );
+
+
+  }
 }
+      
