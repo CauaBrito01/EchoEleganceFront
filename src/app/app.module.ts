@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';  // Adicionando o FormsModule
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { CustomInputComponent } from './components/custom-input/custom-input.component';
 import { CustomButtonComponent } from './components/custom-button/custom-button.component';
@@ -23,6 +24,7 @@ import { EditProductComponent } from './pages/edit-product/edit-product.componen
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
 import { FilterProductsComponent } from './pages/filter-products/filter-products.component';
 import { CreateProductComponent } from './pages/create-product/create-product.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +52,8 @@ import { CreateProductComponent } from './pages/create-product/create-product.co
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule  // Adicionando o FormsModule aos imports
+    FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

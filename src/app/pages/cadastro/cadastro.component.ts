@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastro',
@@ -37,7 +38,11 @@ export class CadastroComponent {
     this.userService.criarUsuario(this.usuario).subscribe(
       response => {
         console.log('Resposta da API:', response);
-        // Adicione aqui a lógica para redirecionar para a página desejada ou qualquer outra ação necessária.
+        this.showAlertCerto('certo', 'comunicado ao servidor'); // Chama a função showAlert() quando ocorre um erro
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
+
       },
       error => {
         console.error('Erro ao criar usuário:', error);
@@ -45,4 +50,12 @@ export class CadastroComponent {
       }
     );
   }
+
+  showAlertCerto(title: string, message: string) {
+    Swal.fire({
+        title: "Good job!",
+        text: "Usuario criado com sucesso!",
+        icon: "success"
+    });
+    }
 }

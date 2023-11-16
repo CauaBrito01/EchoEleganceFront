@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -34,6 +35,11 @@ export class CreateProductComponent {
       response => {
         console.log('Resposta da API:', response);
         // Adicione aqui a lógica para redirecionar para a página desejada ou qualquer outra ação necessária.
+        this.showAlertCerto('certo', 'comunicado ao servidor'); // Chama a função showAlert() quando ocorre um erro
+        setTimeout(() => {
+          this.router.navigate(['/adm-home']);
+        }, 2000);
+
       },
       error => {
         console.error('Erro ao criar produto:', error);
@@ -41,4 +47,11 @@ export class CreateProductComponent {
       }
     );
   }
+  showAlertCerto(title: string, message: string) {
+    Swal.fire({
+        title: "Good job!",
+        text: "Usuario criado com sucesso!",
+        icon: "success"
+    });
+    }
 }
