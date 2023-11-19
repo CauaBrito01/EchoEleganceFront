@@ -1,0 +1,47 @@
+<body>
+    <app-navbar></app-navbar>
+
+    <main>
+
+        <section class="containerBanner">
+            <img src="../../../assets/images/banner.png" />
+        </section>
+
+        <section class="filtros">
+
+            <h2 class="title">FEITO EM BUSCA DO SEU MAIOR CONFORTO</h2>
+            <p class="subtitle">PARA TE ACOMPANHAR EM TODOS OS LUGARES</p>
+
+            <div class="options">
+                <a>Calçados</a>
+                <a>Camisas</a>
+                <a>Calças</a>
+                <a>Jaquetas</a>
+                <a>Acessorios</a>
+            </div>
+
+        </section>
+
+        <section class="discover">
+
+            <div class="containerText">
+                <app-divisor></app-divisor>
+                <p>Conheça nossos produtos!</p>
+                <app-divisor></app-divisor>
+            </div>
+
+        </section>
+
+        <!-- Seção de produtos -->
+        <section class="productsCards">
+            <app-product-card *ngFor="let product of products"
+                [title]="product.tituloProduto"
+                [price]="product.preco"
+                [urlImage]="product.imgProduto"
+                (click)="redirecionarParaPdp(product)"
+            ></app-product-card>
+        </section>
+
+    </main>
+
+</body>

@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="cell">
+        <img src="{{ img }}" alt="product image">
+    </div>
+    <div class="cell">
+        <h2>Nome:</h2>
+        <p>{{ title }}</p>
+    </div>
+    <div class="cell">
+        <h2>Description:</h2>
+        <p>{{ description }}</p>
+    </div>
+    <div class="cell">
+        <h2>Price:</h2>
+        <p>{{ price }}</p>
+    </div>
+    <div class="cell">
+        <div class="actionsContainer">
+            <div class="quantity">
+                <button (click)="diminuirQuantidade()">-</button>
+                <p>{{ quantidade }}</p>
+                <button (click)="aumentarQuantidade()">+</button>
+            </div>
+            <span class="">
+                <img src="../../../../assets/images/delete.png" alt="delete-icon" />
+            </span>
+        </div>
+    </div>
+</div>

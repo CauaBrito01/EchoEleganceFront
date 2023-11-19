@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    gap: 20px;
+}
+
+.itens{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.resumo{
+    border: 1px solid black;
+    border-radius: 10px;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0% 2%;
+}

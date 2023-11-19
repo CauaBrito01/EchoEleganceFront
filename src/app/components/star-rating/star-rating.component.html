@@ -1,0 +1,6 @@
+<div class="star-rating">
+    <span *ngFor="let star of starList" (click)="setRating(star)">
+      {{ star <= rating ? '★' : '☆' }}
+    </span>
+</div>
+  

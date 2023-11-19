@@ -1,0 +1,50 @@
+<!-- adm-product-card.component.html -->
+<div class="card-container">
+  <div class="cell">
+    <img src="{{imgProduto}}" />
+  </div>
+
+  <div class="cell">
+    <p>Name:</p>
+    <p>{{ title }}</p>
+  </div>
+
+  <div class="cell">
+    <p>Description:</p>
+    <p>{{ description }}</p>
+  </div>
+
+  <div class="cell">
+    <p>Marca:</p>
+    <p>{{ marca }}</p>
+  </div>
+
+  <div class="cell">
+    <p>Nota:</p>
+    <p>{{ nota }}</p>
+  </div>
+
+  <div class="cell">
+    <p>Origem:</p>
+    <p>{{ origem }}</p>
+  </div>
+
+  <div class="cell">
+    <p>Qtd produto:</p>
+    <p>{{ qtdProduto }}</p>
+  </div>
+
+  <div class="cell">
+    <p>Unit Price:</p>
+    <p>{{ price }}</p>
+  </div>
+
+  <div class="icon-container">
+    <span class="">
+      <img src="../../../../assets/images/edit.png" alt="edit-icon" (click)="redirecionarEditPage()" />
+    </span>
+    <span class="">
+      <img src="../../../../assets/images/delete.png" alt="delete-icon" (click)="excluirProduto()" />
+    </span>
+  </div>
+</div>

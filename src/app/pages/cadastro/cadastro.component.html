@@ -1,0 +1,27 @@
+<body>
+    <main>
+        <div class="containerForm">
+
+            <h2>Echo elegance</h2>
+
+            <p>Crie sua conta</p>
+
+            <form #form="ngForm">
+                <app-custom-input label="Nome:" placeholder="Digite seu nome" [(ngModel)]="usuario.nomeUsuario" name="nomeUsuario"></app-custom-input>
+                <app-custom-input label="Email:" placeholder="Digite seu email" [(ngModel)]="usuario.emailUsuario" name="emailUsuario"></app-custom-input>
+                <app-custom-input label="Endereço:" placeholder="Digite seu endereço" [(ngModel)]="usuario.endereco" name="endereco"></app-custom-input>
+                <app-custom-input label="Cpf:" placeholder="Digite seu cpf" [(ngModel)]="usuario.cpf" name="cpf"></app-custom-input>
+                <app-custom-input label="Senha:" placeholder="Digite sua senha" type="password" [(ngModel)]="usuario.senhaUsuario" name="senhaUsuario"></app-custom-input>
+                <app-custom-input label="Confirmar Senha:" placeholder="Confirme sua senha" type="password" [(ngModel)]="confirmarSenha" name="confirmarSenha"></app-custom-input>
+            
+                <!-- Restante do formulário -->
+            
+                <div class="containerButton">
+                    <app-custom-button (click)="criarUsuario()" [buttonText]="'Criar'"></app-custom-button>
+                    <app-custom-button (click)="redirecionarLogin()" [buttonText]="'Login'"></app-custom-button>
+                </div>
+            </form>
+
+        </div>
+    </main>
+</body>

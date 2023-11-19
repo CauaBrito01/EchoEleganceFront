@@ -1,0 +1,44 @@
+<!-- pdp.component.html -->
+
+<app-navbar></app-navbar>
+
+<main>
+    <section class="container">
+        <div class="left">
+            
+            <div class="containerImage">
+                <img src="{{imgProduto}}" />
+            </div>
+
+        </div>
+        <div class="right">
+            <div class="containerTexts">
+
+                <div class="titleOfProduct">
+                    <p> {{ tituloProduto }} </p>
+                    <app-star-rating [(rating)]="userRating" (ratingChange)="onRatingChange($event)"></app-star-rating>
+                    <app-divisor></app-divisor>
+                </div>
+    
+                <div class="description">
+                    <p class="title">Descrição</p>
+                    <p class="about">  {{ dscProduto }} </p>
+                </div>
+
+                <div class="buy">
+                    <p class="price">  {{ preco }} </p>
+
+                    <div class="containerButtons">
+                        <div class="quantity">
+                            <button (click)="diminuirQuantidade()">-</button>
+                            <p>{{ quantidade }}</p>
+                            <button (click)="aumentarQuantidade()">+</button>
+                        </div>
+
+                        <app-custom-button [buttonText]="'Comprar'" (click)="comprarProduto()"></app-custom-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

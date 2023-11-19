@@ -1,0 +1,6 @@
+<!-- custom-input.component.html -->
+
+<div class="input-group">
+    <label class="label">{{ label }}</label>
+    <input class="input" [placeholder]="placeholder" [type]="type" [(ngModel)]="value" (input)="onInputChange($event)">
+  </div>

@@ -1,0 +1,28 @@
+<nav>
+
+    <div class="containerLogo">
+        <img src="../../../assets/images/logoIcon.png" alt="Logo" class="logo"  (click)="redirecionarHome()">
+    </div>
+
+    <ul>
+        <li>
+            <a>MASCULINO</a>
+        </li>
+        <li>
+            <a>OFERTAS</a>
+        </li>
+        <li>
+            <a>FEMININO</a>
+        </li>
+    </ul>
+
+    <div class="userActions">
+        <app-custom-input placeholder="Buscar"></app-custom-input>
+
+        <img src="../../../assets/images/user.png" alt="Favoritos" class="heartIcon" (click)="redirecionarUser()">
+
+        <img src="../../../assets/images/shopIcon.png" alt="Carrinho" class="carrinhoIcon" (click)="redirecionarCart()">
+
+    </div>
+
+</nav>

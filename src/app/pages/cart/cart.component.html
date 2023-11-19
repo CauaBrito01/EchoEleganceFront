@@ -1,0 +1,42 @@
+<body>
+    <app-navbar />
+    <div class="container">
+        <h2>Todos os itens (3)</h2>
+
+        <div class="itens">
+
+            <app-cart-card
+                title="Produto 1"
+                description="Descrição do produto 1"
+                price="R$ 100,00"
+            />
+
+            <app-cart-card
+                title="Produto 1"
+                description="Descrição do produto 1"
+                price="R$ 100,00"
+            />
+
+            <app-cart-card
+                title="Produto 1"
+                description="Descrição do produto 1"
+                price="R$ 100,00"
+            />
+
+            <app-cart-card
+                title="Produto 1"
+                description="Descrição do produto 1"
+                price="R$ 100,00"
+            />
+            
+
+        </div>
+
+        <div class="resumo">
+            <h2>Resumo do pedido: R$ 300.00</h2>
+
+            <app-custom-button [buttonText]="'comprar'"/>
+        </div>
+
+    </div>
+</body>
